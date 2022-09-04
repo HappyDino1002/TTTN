@@ -5,7 +5,8 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/auth';
 import { Row, Col } from 'antd';
-import book from '../images/book.png';
+import Starbucks from '../images/Starbucks.png';
+import { rgbToHex } from '@material-ui/core';
 
 const LoginPage = ({ loading, error, onAuth }) => {
 
@@ -31,19 +32,19 @@ const LoginPage = ({ loading, error, onAuth }) => {
                             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                             </div>
                             <div style={{}}>
-                                <p style={{ fontSize: '60px', color: 'rgb(220, 220, 220)', lineHeight: '0' }}>Welcome to</p>
-                                <p style={{ fontSize: '130px', color: 'rgb(229, 229, 229)', fontWeight: 'bold', lineHeight: '0.9' }}>BooK library</p>
+                                <p style={{ fontSize: '30px', color: 'rgb(0, 0, 0)', lineHeight: '0' }}>Welcome to</p>
+                                <p style={{ fontSize: '30px', color: 'rgb(0, 0, 0)', fontWeight: 'bold', lineHeight: '0.9' }}>Starbucks Vietnam</p>
                             </div>
                         </div>
                     </div>
                     <div className="margin">
-                        <img src={book} alt="fireSpot" />
+                        <img src={Starbucks} alt="fireSpot" />
                     </div>
                 </Col>
                 <Col flex="0 1 500px">
                     <div className="wrap-login">
                         <div className="wrap-login1">
-                            <p className="text-center" style={{ fontSize: '40px' }}>Login</p>
+                            <p className="text-center" style={{ fontSize: '40px' }}>Đăng Nhập</p>
                             {errorMessage}
                             {
                                 loading ?
@@ -67,39 +68,44 @@ const LoginPage = ({ loading, error, onAuth }) => {
                                             rules={[
                                                 {
                                                     required: true,
-                                                    message: 'Please input your Username!',
+                                                    message: 'Nhập tên đăng nhập!',
                                                 },
                                             ]}
                                         >
-                                            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+                                            <Input prefix={<UserOutlined className="site-form-item-icon" />} 
+                                            placeholder="Tên Đăng Nhập" 
+                                            />
                                         </Form.Item>
                                         <Form.Item
                                             name="password"
                                             rules={[
                                                 {
                                                     required: true,
-                                                    message: 'Please input your Password!',
+                                                    message: 'Nhập mật khẩu!',
                                                 },
                                             ]}
                                         >
                                             <Input
                                                 prefix={<LockOutlined className="site-form-item-icon" />}
                                                 type="password"
-                                                placeholder="Password"
+                                                placeholder="Mật Khẩu"
                                             />
                                         </Form.Item>
                                         <Form.Item>
                                             <Form.Item name="remember" valuePropName="checked" noStyle>
-                                                <Checkbox>Remember me</Checkbox>
+                                                <Checkbox> 
+                                                    Nhớ tôi
+
+                                                </Checkbox>
                                             </Form.Item>
 
                                         </Form.Item>
 
                                         <Form.Item>
-                                            <Button type="primary" htmlType="submit" className="login-form-button">
-                                                Log in
+                                            <Button style={{ background: 'rgb(0,112,66)' , fontWeight: 'bold' }} type="primary" htmlType="submit" className="login-form-button" >
+                                                Đăng Nhập
                                             </Button>
-                                            &nbsp; Or <a href="/signup">register now!</a>
+                                            &nbsp; hoặc <a href="/signup">Đăng ký ngay!</a>
                                         </Form.Item>
                                     </Form>
                             }

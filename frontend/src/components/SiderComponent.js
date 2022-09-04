@@ -11,7 +11,6 @@ import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
-import BookIcon from '@material-ui/icons/Book';
 import CollectionsBookmarkIcon from '@material-ui/icons/CollectionsBookmark';
 import ListIcon from '@material-ui/icons/List';
 import HomeIcon from '@material-ui/icons/Home';
@@ -40,7 +39,17 @@ const SiderComponent = () => {
     else if (window.location.pathname === '/admin/book-category') indexUrl = "/admin/book-category";
     else if (window.location.pathname === '/admin/book-location') indexUrl = "/admin/book-location";
     else if (window.location.pathname === '/admin/users') indexUrl = "/admin/users";
-
+    else if (window.location.pathname === '/admin/khuvuc') indexUrl = "/admin/khuvuc";
+    else if (window.location.pathname === '/admin/cuahang') indexUrl = "/admin/cuahang";
+    else if (window.location.pathname === '/admin/khonvl') indexUrl = "/admin/khonvl";
+    else if (window.location.pathname === '/admin/khosp') indexUrl = "/admin/khosp";
+    else if (window.location.pathname === '/admin/thucuong') indexUrl = "/admin/thucuong";
+    else if (window.location.pathname === '/admin/sanpham') indexUrl = "/admin/sanpham";
+    else if (window.location.pathname === '/admin/nhanvien') indexUrl = "/admin/nhanvien";
+    else if (window.location.pathname === '/admin/tknv') indexUrl = "/admin/tknv";
+    else if (window.location.pathname === '/admin/thethanhvien') indexUrl = "/admin/thethanhvien";
+    else if (window.location.pathname === '/admin/khachhang') indexUrl = "/admin/khachhang";
+    else if (window.location.pathname === '/admin/ctkm') indexUrl = "/admin/ctkm";
     const [selectedIndex, setSelectedIndex] = React.useState(indexUrl);
 
     const handleFirstClick = (event, index) => {
@@ -81,53 +90,6 @@ const SiderComponent = () => {
                         <ListItemText primary="Home" />
                     </ListItem>
                 </Link>
-                <ListItem button
-                    onClick={(event) => handleFirstClick(event, "book")}
-                    selected={selectedIndex === "book"}
-                >
-                    <ListItemIcon>
-                        <CollectionsBookmarkIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Book" />
-                    {openFirst ? <ExpandLess /> : <ExpandMore />}
-                </ListItem>
-                <Collapse in={openFirst} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding>
-                        <Link style={{ color: 'black' }} to="/admin/book-category">
-                            <ListItem button className={classes.nested}
-                                selected={selectedIndex === "/admin/book-category"}
-                                onClick={(event) => handleListItemClick(event, "/admin/book-category")}
-                            >
-                                <ListItemIcon>
-                                    <BookIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Category" />
-                            </ListItem>
-                        </Link>
-                        <Link style={{ color: 'black' }} to="/admin/book-location">
-                            <ListItem button className={classes.nested}
-                                selected={selectedIndex === "/admin/book-location"}
-                                onClick={(event) => handleListItemClick(event, "/admin/book-location")}
-                            >
-                                <ListItemIcon>
-                                    <SearchIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Location" />
-                            </ListItem>
-                        </Link>
-                        <Link style={{ color: 'black' }} to="/admin/all-book">
-                            <ListItem button className={classes.nested}
-                                selected={selectedIndex === "/admin/all-book"}
-                                onClick={(event) => handleListItemClick(event, "/admin/all-book")}
-                            >
-                                <ListItemIcon>
-                                    <ListIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="All books" />
-                            </ListItem>
-                        </Link>
-                    </List>
-                </Collapse>
                 <Link style={{ color: 'black' }} to="/admin/users">
                     <ListItem button
                         selected={selectedIndex === "/admin/users"}
@@ -139,6 +101,127 @@ const SiderComponent = () => {
                         <ListItemText primary="User" />
                     </ListItem>
                 </Link>
+                <Link style={{ color: 'black' }} to="/admin/khuvuc">
+                    <ListItem button
+                        selected={selectedIndex === "/admin/khuvuc"}
+                        onClick={(event) => handleListItemClick(event, "/admin/khuvuc")}
+                    >
+                        <ListItemIcon>
+                            <AssignmentIndIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Khu Vuc" />
+                    </ListItem>
+                </Link>
+                <Link style={{ color: 'black' }} to="/admin/cuahang">
+                    <ListItem button
+                        selected={selectedIndex === "/admin/cuahang"}
+                        onClick={(event) => handleListItemClick(event, "/admin/cuahang")}
+                    >
+                        <ListItemIcon>
+                            <AssignmentIndIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Cua Hang" />
+                    </ListItem>
+                    <Link style={{ color: 'black' }} to="/admin/thethanhvien">
+                    <ListItem button
+                        selected={selectedIndex === "/admin/thethanhvien"}
+                        onClick={(event) => handleListItemClick(event, "/admin/thethanhvien")}
+                    >
+                        <ListItemIcon>
+                            <AssignmentIndIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="The Thanh Vien" />
+                    </ListItem>
+                </Link>
+                <Link style={{ color: 'black' }} to="/admin/ctkm">
+                    <ListItem button
+                        selected={selectedIndex === "/admin/ctkm"}
+                        onClick={(event) => handleListItemClick(event, "/admin/ctkm")}
+                    >
+                        <ListItemIcon>
+                            <AssignmentIndIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Chuong Trinh Khuyen Mai" />
+                    </ListItem>
+                </Link>
+                <Link style={{ color: 'black' }} to="/admin/khachhang">
+                    <ListItem button
+                        selected={selectedIndex === "/admin/khachhang"}
+                        onClick={(event) => handleListItemClick(event, "/admin/khachhang")}
+                    >
+                        <ListItemIcon>
+                            <AssignmentIndIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Khach Hang" />
+                    </ListItem>
+                </Link>
+                <Link style={{ color: 'black' }} to="/admin/khonvl">
+                    <ListItem button
+                        selected={selectedIndex === "/admin/khonvl"}
+                        onClick={(event) => handleListItemClick(event, "/admin/khonvl")}
+                    >
+                        <ListItemIcon>
+                            <AssignmentIndIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Kho NVL" />
+                    </ListItem>
+                </Link>
+                <Link style={{ color: 'black' }} to="/admin/khosp">
+                    <ListItem button
+                        selected={selectedIndex === "/admin/khosp"}
+                        onClick={(event) => handleListItemClick(event, "/admin/khosp")}
+                    >
+                        <ListItemIcon>
+                            <AssignmentIndIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Kho SP" />
+                    </ListItem>
+                </Link>
+                <Link style={{ color: 'black' }} to="/admin/nhanvien">
+                    <ListItem button
+                        selected={selectedIndex === "/admin/nhanvien"}
+                        onClick={(event) => handleListItemClick(event, "/admin/nhanvien")}
+                    >
+                        <ListItemIcon>
+                            <AssignmentIndIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Nhan Vien" />
+                    </ListItem>
+                </Link>
+                <Link style={{ color: 'black' }} to="/admin/sanpham">
+                    <ListItem button
+                        selected={selectedIndex === "/admin/sanpham"}
+                        onClick={(event) => handleListItemClick(event, "/admin/sanpham")}
+                    >
+                        <ListItemIcon>
+                            <AssignmentIndIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="San Pham" />
+                    </ListItem>
+                </Link>
+                <Link style={{ color: 'black' }} to="/admin/thucuong">
+                    <ListItem button
+                        selected={selectedIndex === "/admin/thucuong"}
+                        onClick={(event) => handleListItemClick(event, "/admin/thucuong")}
+                    >
+                        <ListItemIcon>
+                            <AssignmentIndIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Thuc Uong" />
+                    </ListItem>
+                </Link>
+                <Link style={{ color: 'black' }} to="/admin/tknv">
+                    <ListItem button
+                        selected={selectedIndex === "/admin/tknv"}
+                        onClick={(event) => handleListItemClick(event, "/admin/tknv")}
+                    >
+                        <ListItemIcon>
+                            <AssignmentIndIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Tai Khoan Nhan Vien" />
+                    </ListItem>
+                </Link>
+                </Link>
             </List>
         </Sider>
 
@@ -146,4 +229,3 @@ const SiderComponent = () => {
 };
 
 export default SiderComponent;
-

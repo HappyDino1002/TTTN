@@ -164,7 +164,7 @@ const NavbarComponent = ({ logout, history }) => {
             <AppBar style={{ background: 'rgb(115, 178, 245)' }} position="static">
                 <Toolbar>
                     <Typography style={{ color: 'white', fontWeight: 'bold' }} className={classes.title} variant="h5" noWrap>
-                        LOGO
+                        STARBUCKS
                     </Typography>
                     <div className={classes.grow} />
 
@@ -206,4 +206,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default withRouter(connect(null, mapDispatchToProps)(NavbarComponent));
-

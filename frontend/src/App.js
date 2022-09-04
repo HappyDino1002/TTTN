@@ -12,7 +12,6 @@ import BaseRouter from './routes';
 import * as actions from './store/actions/auth';
 import { Route } from "react-router-dom";
 import './css/App.css';
-import Homepage from './pages/Homepage';
 import NotFound from './pages/ErrorStatus/NotFound';
 import NotAuthorized from './pages/ErrorStatus/NotAuthorized';
 
@@ -25,7 +24,7 @@ class App extends Component {
       <div className="wrap">
         <Router>
           <Switch>
-            <Route exact path='/' component={Homepage} />
+            <Route exact path='/' component={LoginPage} />
             <Route path='/login' render={() => {
               return localStorage.getItem('token') ?
                 <Redirect to="/admin" />

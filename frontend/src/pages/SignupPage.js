@@ -58,7 +58,7 @@ const RegistrationForm = ({ onAuth, history, loading }) => {
                 <Row>
                     <Col span={24} offset={0}>
                         <div className="content-signup">
-                            <p className="text-dec">Sign up</p>
+                            <p className="text-dec" style={{color:'rgb(160, 208, 248)'}}>Đăng Ký</p>
                             {
                                 loading ?
                                     <div className="spin">
@@ -77,16 +77,16 @@ const RegistrationForm = ({ onAuth, history, loading }) => {
 
                                         <Form.Item
                                             name="username"
-                                            label="Username"
+                                            label="Tên đăng nhập"
                                             hasFeedback
                                             rules={[
                                                 {
                                                     required: true,
-                                                    message: 'Please input your Username!',
+                                                    message: 'Nhập tên đăng nhập!',
                                                 },
                                                 {
                                                     min: 6,
-                                                    message: 'This username is too short. It must contain at least 6 characters!',
+                                                    message: 'Tên đăng nhập ngắn quá, nhiều hơn 6 ký tự!',
                                                 },
                                                 {
                                                     validator: (_, value) =>
@@ -108,7 +108,7 @@ const RegistrationForm = ({ onAuth, history, loading }) => {
                                                                     }
 
                                                                     if (hasMatch) {
-                                                                        reject(new Error('A user with that username already exists!'))
+                                                                        reject(new Error('Tên đăng nhập này tồn tại rồi nè!'))
                                                                     }
 
                                                                     resolve();
@@ -125,11 +125,11 @@ const RegistrationForm = ({ onAuth, history, loading }) => {
                                             rules={[
                                                 {
                                                     type: 'email',
-                                                    message: 'The input is not valid E-mail!',
+                                                    message: 'Này không phải email đâu!',
                                                 },
                                                 {
                                                     required: true,
-                                                    message: 'Please input your E-mail!',
+                                                    message: 'Nhập email!',
                                                 },
                                                 {
                                                     validator: (_, value) =>
@@ -151,7 +151,7 @@ const RegistrationForm = ({ onAuth, history, loading }) => {
                                                                     }
 
                                                                     if (hasMatch) {
-                                                                        reject(new Error('A user with that email already exists!'))
+                                                                        reject(new Error('Email này đã tồn tại!'))
                                                                     }
 
                                                                     resolve();
@@ -164,19 +164,19 @@ const RegistrationForm = ({ onAuth, history, loading }) => {
                                         </Form.Item>
                                         <Form.Item
                                             name="password"
-                                            label="Password"
+                                            label="Mật khẩu"
                                             rules={[
                                                 {
                                                     required: true,
-                                                    message: 'Please input your password!',
+                                                    message: 'Nhập mật khẩu!',
                                                 },
                                                 {
                                                     min: 8,
-                                                    message: 'This password is too short. It must contain at least 8 characters!',
+                                                    message: 'Quá ngắn, nhiều hơn 8 ký tự!',
                                                 },
                                                 {
                                                     max: 16,
-                                                    message: 'This password is too short. It must contain at most 16 characters!',
+                                                    message: 'Quá dài, không quá 16 ký tự!',
                                                 },
                                                 {
                                                     pattern: /^(?=.*[0-9])(?=.*[a-z]).{8,}$/,
@@ -189,13 +189,13 @@ const RegistrationForm = ({ onAuth, history, loading }) => {
                                         </Form.Item>
                                         <Form.Item
                                             name="confirm"
-                                            label="Confirm Password"
+                                            label="Lặp lại mật khẩu"
                                             dependencies={['password']}
                                             hasFeedback
                                             rules={[
                                                 {
                                                     required: true,
-                                                    message: 'Please confirm your password!',
+                                                    message: 'Xác nhận lại mật khẩu!',
                                                 },
                                                 ({ getFieldValue }) => ({
                                                     validator(_, value) {
@@ -203,7 +203,7 @@ const RegistrationForm = ({ onAuth, history, loading }) => {
                                                             return Promise.resolve();
                                                         }
 
-                                                        return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                                                        return Promise.reject(new Error('Mật khẩu không giống nhau kìa!'));
                                                     },
                                                 }),
                                             ]}
@@ -214,8 +214,9 @@ const RegistrationForm = ({ onAuth, history, loading }) => {
                                         <Form.Item
                                             {...tailFormItemLayout}
                                         >
-                                            <Button type="primary" htmlType="submit">
-                                                Register
+                                            <Button style={{ background: 'rgb(0,112,66)' , fontWeight: 'bold' }}
+                                            type="primary" htmlType="submit">
+                                                Đăng ký
                                             </Button>
                                         </Form.Item>
 
