@@ -1,0 +1,40 @@
+.ground {
+  background-color: rgb(115, 178, 245);
+  height: 800px;
+}
+
+.wrap-signup {
+  width: 100%;
+  padding: 50px;
+}
+
+.content-signup {
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 30px;
+}
+
+.text-dec {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: grey;
+}
+
+.error {
+  padding-top: 5px;
+  border-radius: 20px;
+  animation-name: animation;
+  animation-duration: 0.4s;
+  color: red;
+}
+
+@keyframes animation {
+  from {
+    color: transparent;
+  }
+}
